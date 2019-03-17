@@ -1,22 +1,18 @@
 <html>
     <head>
-        <title>Translator's box</title>
+        <title>日英仏翻訳者の部屋</title>
     </head>
     <body>
         <div>
-            <h1><a href="/">Translator's box</a></h1>
-        </div>
+    <h1><a href="/">日英仏翻訳者の部屋</a></h1>
+</div>
 
-        <div>
-            <p>published: 17.03.2019, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p> こんにちは！ よろしくお願いします！ </p>
-        </div>
-
-        <div>
-            <p>公開日: 2019/03/17, 12:14</p>
-            <h2><a href="">2番目の投稿</a></h2>
-            <p> こんにちは！ よろしくお願いします！ </p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
